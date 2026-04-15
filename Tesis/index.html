@@ -1,0 +1,333 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    /* Fondo con los colores del logo en versión ultra pastel */
+    background: linear-gradient(135deg,#e0f2fe,#fff8f0,#fff7ed);
+    color:#334155;
+    scroll-behavior:smooth;
+}
+
+/* MENU RESPONSIVE */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo {
+    height: 50px; /* Un poquito más grande para que luzca el logo de Meta Study */
+    width: auto;
+    border-radius: 8px;
+}
+
+nav h1 {
+    /* Azul marino del logo en versión suave */
+    color: #ee7c1e; 
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    /* Naranja del logo en versión pastel */
+    color: #fb923c; 
+}
+
+/* PORTADA */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    /* Degradado basado en el cian y naranja del logo */
+    background: linear-gradient(120deg,#fac9ad,#f7d0b9,#ffedd5);
+    padding: 20px;
+}
+
+header h2{ 
+    font-size:clamp(2rem, 5vw, 3.2rem); 
+    font-weight:800; 
+    color:#e45715; /
+}
+
+header p{ max-width:600px; font-size:1.1rem; margin-top:10px; color:#475569; }
+
+.btn{
+    margin-top:20px;
+    padding:14px 40px;
+    border-radius:30px;
+    /* Botón naranja pastel vibrante */
+    background:#fb923c;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+    display:inline-block;
+    border:none;
+    box-shadow: 0 4px 15px rgba(251, 146, 60, 0.3);
+}
+
+.btn:hover {
+    background: #f97316;
+    transform: scale(1.05);
+}
+
+/* SECCIONES */
+section{ padding:80px 5%; }
+h2{ font-size:2rem; color:#e04903; margin-bottom:15px; text-align:center; }
+
+/* TARJETAS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    background:rgb(253, 175, 130);
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.04);
+    /* Borde basado en el azul del logo */
+    border-left:6px solid #f8cfad; 
+}
+
+/* PDF CONTAINER */
+.pdf-container {
+    width: 100%;
+    max-width: 1100px;
+    height: 85vh;
+    margin: 20px auto;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 8px solid #e0f2fe; /* Borde azul cielo muy claro */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* EQUIPO */
+.team{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.member{
+    background:rgb(248, 207, 174);
+    padding:20px;
+    border-radius:20px;
+    width:280px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+.member img{ 
+    width:120px; 
+    height:120px; 
+    border-radius:50%; 
+    object-fit: cover; 
+    border:4px solid #e7f7ff; 
+    margin-bottom: 10px;
+}
+
+/* GALERÍA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Esto las pone una al lado de otra */
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.gallery img {
+    width: 100%;        /* Ocupa el ancho de la columna */
+    height: 250px;      /* Altura fija para que todas se vean iguales */
+    object-fit: cover;  /* Recorta la imagen para que no se vea estirada */
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: block;     /* Evita espacios extraños abajo */
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* FOOTER */
+footer{ 
+    background:#feece0; 
+    padding:20px; 
+    text-align:center; 
+    color:#e28752;
+}
+
+/* AJUSTES MÓVIL */
+@media (max-width: 768px) {
+    nav { padding: 10px 20px; }
+    nav ul { display: none; }
+    section { padding: 60px 20px; }
+    .pdf-container { height: 500px; }
+}
+</style>
+
+<body>
+
+<!-- MENU -->
+<nav>
+  <div class="logo-area">
+    <img src="img/logo.jpg" alt="Logo" class="nav-logo">
+    <h1>Blender Guía Digital</h1>
+  </div>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#proyecto">Proyecto</a></li>
+    <li><a href="#practicas">Prácticas</a></li>
+    <li><a href="#quiz">Quiz Roblox</a></li>
+    <li><a href="#guia">Guía Digital</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#equipo">Equipo</a></li>
+  </ul>
+</nav>
+
+<!-- PORTADA -->
+<header id="inicio">
+<h2>Guía Digital Didáctica de Blender</h2>
+<p>Proyecto de tesis con aprendizaje interactivo y visualización en Realidad Virtual</p>
+<a href="#proyecto" class="btn">Ver Proyecto</a>
+</header>
+
+<!-- PROYECTO -->
+<section id="proyecto">
+<h2>📘 Información del Proyecto</h2>
+<p>
+Este proyecto consiste en el desarrollo de una guía digital didáctica para el aprendizaje del software Blender,
+incluyendo prácticas guiadas y visualización de entornos en realidad virtual (VR).
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>Objetivo General</h3>
+<p>Crear una guía educativa que enseñe los fundamentos con su aplicación práctica en Blender 3D, incorporando herramientas de realidad virtual para mejorar el 
+    aprendizaje interactivo y las habilidades digitales de cada uno de los estudiantes.</p>
+</div>
+
+<div class="card">
+<h3>Objetivos Específicos</h3>
+<ul>
+<li>Describir las funciones y herramientas básicas y necesarias para poder elaborar diseños simples para que los estudiantes aprendan el ámbito del diseño digital y la animación.</li>
+<li>Implementar elementos de realidad virtual para proyectar los modelos 3D a través de lentes VR para un aprendizaje dinámico</li>
+<li>Integrar los diseños para crear modelos tridimensionales básicos, tener un uso responsable y educativo de las herramientas digitales en el área de Informática.</li>
+<li>Fomentar el aprendizaje autónomo mediante la exploración de entornos virtuales, potenciando la creatividad y el desarrollo de espacios digitales aplicados al diseño 3D</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- PRACTICAS -->
+<section id="practicas">
+<h2> Prácticas</h2>
+<div class="cards">
+<div class="card">Modelado de objetos básicos</div>
+<div class="card">Escenarios 3D para VR</div>
+<div class="card">Animaciones simples</div>
+</div>
+</section>
+
+<!-- QUIZ ROBLOX -->
+<section id="quiz">
+<h2>🎮 Quiz Interactivo en Roblox</h2>
+<p>
+Se desarrolló un quiz interactivo en Roblox para reforzar el aprendizaje de Blender mediante actividades gamificadas.
+</p>
+
+<a href="https://www.roblox.com/games/TU_ID_DEL_JUEGO" target="_blank" class="btn">
+🚀 Entrar al Quiz en Roblox
+</a>
+</section>
+
+<!-- GUIA DIGITAL -->
+<section id="guia" style="padding: 60px 0; display: flex; flex-direction: column; align-items: center; background: rgba(255,255,255,0.3);">
+  <h2 style="text-align: center; margin-bottom: 20px;">📖 Guía Digital Didáctica</h2>
+  
+  <div style="width: 90%; max-width: 1000px; height: 1000px; min-height: 80vh; position: relative;">
+    <iframe 
+      src="Diseño y desarrollo de una guía didáctica educativa de Blender 3D con implementación de realidad virtual para el aprendizaje digital (4).pdf#toolbar=1&navpanes=0&scrollbar=1" 
+      width="100%" 
+      height="100%" 
+      style="border-radius: 20px; border: 10px solid #fbddcf; box-shadow: 0 20px 50px rgba(0,0,0,0.2); background: white;">
+      <p>Tu navegador no soporta la vista previa. <a href="Diseño y desarrollo de una guía didáctica educativa de Blender 3D con implementación de realidad virtual para el aprendizaje digital (4).pdf">Click para descargar.</a></p>
+    </iframe>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <h2>🖼️ Galería de Modelos 3D</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1603898037225-9c9c6b5d5c64" alt="Modelo 1">
+    <img src="https://images.unsplash.com/photo-1612832020931-8bde7cba9f0c" alt="Modelo 2">
+    <img src="https://images.unsplash.com/photo-1527430253228-e93688616381" alt="Modelo 3">
+    <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051" alt="Modelo 4">
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+<h2>👩‍💻 Autoras del Proyecto</h2>
+
+<div class="team">
+<div class="member">
+<img src="https://i.imgur.com/0y0y0y0.png">
+<h3>Dayanna Quizhpe</h3>
+<p>Tercero de Bachillerato<br>Especialidad Informática</p>
+</div>
+
+<div class="member">
+<img src="https://i.imgur.com/0y0y0y0.png">
+<h3>Domenica Paucar</h3>
+<p>Tercero de Bachillerato<br>Especialidad Informática</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Proyecto de Tesis - Guía Digital Didáctica de Blender con VR</p>
+</footer>
+
+</body>
+</html>
